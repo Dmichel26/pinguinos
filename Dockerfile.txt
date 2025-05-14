@@ -1,10 +1,17 @@
+#imagen oficial de python
 FROM python:3.11
 
+#directorio de trabajo dentro del contenedor
 WORKDIR /app
 
+#copia el archivo re.. al contenedor 
 COPY requirements.txt .
+
+#copia archivo python
 COPY etl.py .
 
+#ejecutar pip para instalar las dependencias
 RUN pip install -r requirements.txt
 
+#ejecutar el scrip
 CMD ["python", "etl.py"]
